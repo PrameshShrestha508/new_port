@@ -1,0 +1,95 @@
+#banner {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+}
+#banner .content {
+  max-width: 800px;
+  margin: 40px 0 0 80px;
+  line-height: 1.4;
+}
+
+#banner .content .content_head {
+  font-size: 3em;
+  color: #120845;
+}
+#banner .content p {
+  font-size: 1.4em;
+  text-align: justify;
+  color: #605b7a;
+  margin-top: 70px;
+}
+#banner .button {
+  position: relative;
+  border: 1px solid #7562e0;
+  color: #7562e0;
+  font-size: 1em;
+  line-height: 25px;
+  display: inline-block;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-weight: 400;
+  text-decoration: none !important;
+  outline: none;
+  margin-top: 20px;
+  z-index: 2;
+}
+#banner .button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#banner .button span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+#banner .button:hover span {
+  padding-right: 25px;
+}
+
+#banner .button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#banner .button:hover {
+  background-color: #7562e0;
+  color: #f9f9f9;
+}
+
+#banner .hero_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  background-image: url(../../images/me.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 70% 40%;
+  z-index: 1;
+}
+#banner #right_circle {
+  background-color: #7562e0;
+  width: 80vw;
+  height: 80vw;
+  position: absolute;
+  bottom: -100%;
+  right: -40%;
+  border-radius: 100%;
+}
+
+#banner .icon {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 150px;
+  color: #cdc5f4;
+  height: 150px;
+  justify-content: space-around;
+}

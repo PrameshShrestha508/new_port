@@ -1,0 +1,73 @@
+#header {
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .logo {
+  font-weight: 700;
+  color: #7562e0;
+  font-size: 2em;
+  text-decoration: none;
+  margin-left: 85px;
+}
+
+#header .navigation {
+  position: relative;
+  display: flex;
+  margin-right: 80px;
+}
+#header .navigation li {
+  list-style-type: none;
+  padding: 0 15px;
+}
+#header .navigation li a {
+  text-decoration: none;
+  color: #5a537d;
+  font-weight: 1000;
+  font-size: 1em;
+}
+#header .navigation li a:hover {
+  color: #da4167;
+}
+#header.sticky {
+  background: #f9f9f9;
+  padding: 10px 0;
+  width: auto;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-theme {
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+}
+body.dark-theme .navigation li a {
+  color: #5a537d;
+}
+body.dark-theme .content h2 {
+  color: #fff;
+}
+body.dark-theme .projects_title {
+  color: #fff;
+}
+body.dark-theme .content .left-side .details .topic {
+  color: #7f6de2;
+}
+body.dark-theme .card-body .card-title {
+  color: #fff;
+}
+body.dark-theme .card-body .card-text {
+  color: #fff;
+}
+body.dark-theme header.sticky .dark {
+  color: red;
+}
+body.dark-theme .projects_subtitle {
+  color: #f9f9f9;
+}
+body.dark-theme .navigation li a:hover {
+  color: #da4167;
+}
