@@ -428,21 +428,21 @@ header.sticky {
 /* Projects sections starts */
 
 /* contact us */
-.container {
+/* .container {
   width: 100%;
   background: #fff;
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 70px;
-}
+} */
 #contacts {
   margin: 60px 0;
 }
 .container .content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 .container .content .left-side {
   width: 25%;

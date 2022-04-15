@@ -11,7 +11,9 @@ function Contact() {
     setFormValues({ ...formValues, [name]: value });
     console.log(formValues);
   };
-
+  const checkValidate = () => {
+    setFormErrors(validate(formValues));
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
@@ -26,14 +28,15 @@ function Contact() {
     if (!values.name) {
       errors.name = "Name is required";
     }
+    if (values.name.length <= 2) {
+      errors.name = "Name must be more than 2 characters";
+    }
     if (!values.email) {
-      errors.email = "email is required";
+      errors.email = "Email is required";
     } else if (!regex.test(values.email)) {
       errors.email = "This is not a valid email";
     }
-    if (!values.textarea) {
-      errors.textarea = "textarea is required";
-    }
+
     return errors;
   };
 
@@ -73,24 +76,27 @@ function Contact() {
                   name="name"
                   placeholder="Enter your name"
                   onChange={(e) => handleChange(e, "name")}
+                  onBlur={checkValidate}
                   value={formValues.name}
                 />
               </div>
-              {formErrors.name}
+              <span style={{ color: "red" }}>{formErrors.name}</span>
               <div className="input-box">
                 <input
                   type="text"
                   name="email"
                   placeholder="Enter your email"
                   onChange={(e) => handleChange(e, "email")}
+                  onBlur={checkValidate}
                   value={formValues.email}
                 />
               </div>
-              {formErrors.email}
+              <span style={{ color: "red" }}>{formErrors.email}</span>
               <div className="input-box message-box">
                 <textarea
                   placeholder="Your message here"
                   onChange={(e) => handleChange(e, "textarea")}
+                  onBlur={checkValidate}
                   name="textarea"
                   value={formValues.textarea}
                 ></textarea>
