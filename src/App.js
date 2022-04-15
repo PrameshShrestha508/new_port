@@ -8,6 +8,7 @@ import Contact from "./components/Contact/Contact";
 // import Footer from "./components/Footer/Footer";
 // import { Hooks } from "./components/Hooks/Hooks";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Works from "./components/Works/Works";
 function App() {
   return (
     <div className="wholeContainer">
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Banner />} />
           <Route path="/project" element={<PortfolioWrapper />} />
+          <Route path="/works" element={<Works />} />
           <Route path="/contacts" element={<Contact />} />
         </Routes>
         {/* <Footer /> */}

@@ -27,9 +27,9 @@ const Navbar = () => {
               Portfolio
             </Link>
           </li>
-          {/* <li>
-            <a href="#skills">Skills</a>
-          </li> */}
+          <li>
+            <a href="/works">Works</a>
+          </li>
           <li>
             <Link to="/contacts" onClick={toggleMenu}>
               Contacts

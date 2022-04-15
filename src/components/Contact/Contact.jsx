@@ -1,6 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
+
 function Contact() {
+  const initialValues = { name: "", email: "", textarea: "" };
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+    console.log(formValues);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormErrors(validate(formValues));
+    if (Object.keys(formErrors).length === 0) {
+      setFormValues(initialValues);
+    }
+  };
+  //   if(Object.keys(formErrors).length===0 && isSubmit){
+  const validate = (values) => {
+    const errors = {};
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    if (!values.name) {
+      errors.name = "Name is required";
+    }
+    if (!values.email) {
+      errors.email = "email is required";
+    } else if (!regex.test(values.email)) {
+      errors.email = "This is not a valid email";
+    }
+    if (!values.textarea) {
+      errors.textarea = "textarea is required";
+    }
+    return errors;
+  };
+
   return (
     <>
       <section className="container" id="contacts">
@@ -30,16 +66,36 @@ function Contact() {
               If you have any work from me, you can send me message from here.
               It's my pleasure to help you.
             </p>
-            <form action="#" onsubmit="myFunction()">
+            <form onSubmit={handleSubmit}>
               <div className="input-box">
-                <input type="text" placeholder="Enter your name" required />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  onChange={(e) => handleChange(e, "name")}
+                  value={formValues.name}
+                />
               </div>
+              {formErrors.name}
               <div className="input-box">
-                <input type="email" placeholder="Enter your email" required />
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Enter your email"
+                  onChange={(e) => handleChange(e, "email")}
+                  value={formValues.email}
+                />
               </div>
+              {formErrors.email}
               <div className="input-box message-box">
-                <textarea placeholder="Your message here" required></textarea>
+                <textarea
+                  placeholder="Your message here"
+                  onChange={(e) => handleChange(e, "textarea")}
+                  name="textarea"
+                  value={formValues.textarea}
+                ></textarea>
               </div>
+              {formErrors.textarea}
               <div className="button1">
                 <input type="submit" value="Send Now" />
               </div>
